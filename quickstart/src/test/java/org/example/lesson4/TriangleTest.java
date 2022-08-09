@@ -1,6 +1,6 @@
 package org.example.lesson4;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -12,7 +12,7 @@ public class TriangleTest {
     @ParameterizedTest
    // @DisplayName("Проверка вычисления площиди треугольника, если одна из сторон "0"");
     @CsvSource({"2, 0, 2", "0, 1, 1"})
-    void ravnoctoroniiSTreugolnik (int a, int b, int c) {
+    void ravnoctoroniiSTreugolnik (int a, int b, int c) throws Exception {
         double result = isSTreugolnika(a, b, c);
         Assertions.assertEquals(0.0, result);
     }
@@ -24,11 +24,17 @@ public class TriangleTest {
         double result = isSTreugolnika(a, b, c);
         Assertions.assertEquals(-0.0, result);
      **/
+
     @Test
-    void otrStorona () {
-        double result = isSTreugolnika(-1, 5, 2);
-        Assertions.assertEquals(0.0, result);
+    void triangleTest() throws Exception {
+        Assertions.assertEquals(isSTreugolnika(2, 2, 2), 1.73205, 0.001);
     }
+
+    @Test
+    void triangleNegativeTest() {
+        Assertions.assertThrows(Exception.class, () -> isSTreugolnika(-2, 2, 2));
+    }
+
 
 }
 
