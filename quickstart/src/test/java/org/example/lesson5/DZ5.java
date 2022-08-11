@@ -6,7 +6,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class DZ5 {
@@ -31,7 +30,6 @@ public class DZ5 {
     @Test
     void poiskYa() throws InterruptedException {
         driver.get(YANDEX_POISK);
-
         WebElement loginForm = driver.findElement(By.id("text"));
         loginForm.sendKeys("комедии");
         driver.findElement(By.className("search2__button")).click();
@@ -44,7 +42,6 @@ public class DZ5 {
         actions.moveToElement(driver.findElement(By.xpath("//div[@aria-label='Название - Затерянный город, 2022, мелодрама, боевик, Рейтинг Кинопоиска - 6.1 из 10']")))
                 .build()
                 .perform();
-
         Assertions.assertEquals(driver.findElement(By.xpath("//div[@class='Polaroid']")).isDisplayed(), true);
     }
 
