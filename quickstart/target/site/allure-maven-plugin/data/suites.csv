@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 15 15:55:05 GMT+03:00 2022","Mon Aug 15 15:56:26 GMT+03:00 2022","81574","","org.example.lesson6.DZT6","","org.example.lesson6.DZT6","yaPoistTest","yaPoistTest()",""

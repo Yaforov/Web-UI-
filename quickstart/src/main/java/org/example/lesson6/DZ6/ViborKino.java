@@ -1,5 +1,6 @@
 package org.example.lesson6.DZ6;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,6 +17,7 @@ public class ViborKino extends BasePage1 {
     @FindBy(xpath = xpathFilmLocator)
     private WebElement viborKino;
 
+    @Step("Навести курсор на фильм и проверка появления окна с оценкой фильма.")
     public void proverkaVibora () {
         ((JavascriptExecutor) driver).executeScript("let element = document.evaluate(\"//div[@class='popup2__content distr-popup__content']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)\n" +
                 "element.singleNodeValue.remove()");

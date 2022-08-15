@@ -1,5 +1,6 @@
 package org.example.lesson6.DZ6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +16,8 @@ public class MainYa extends BasePage1 {
     @FindBy(xpath = "//div[@class='search2__button']")
     private WebElement poiskButton;
 
-    public void PoiskYa(String poiskText) {
+    @Step("Ввод поиска по слову:")
+    public void poiskYa(String poiskText) {
         textPoisk.sendKeys(poiskText);
         poiskButton.click();
     }
